@@ -47,7 +47,7 @@ Perintah ini membuat semua tabel dan mengisi data awal: 8 jurusan, 50 kelas,
 ## 4. Akses aplikasi
 
 - **Form siswa:** alamat root aplikasi (lihat cara akses)
-- **Login admin:** `/admin/login` — default `admin@smkn5.sch.id` / `admin12345`
+- **Login admin:** `/admin/login` — default username `admin` / `admin12345`
   (**wajib ganti password** setelah instalasi; tidak ada menu ganti password,
   ganti lewat `php artisan tinker`: `User::first()->update(['password' => bcrypt('baru')])`)
 - **Cetak QR lobi:** login admin → menu **QR Lobi** → **Cetak QR** → tempel hasil cetak di lobi.

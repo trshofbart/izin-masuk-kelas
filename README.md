@@ -36,11 +36,11 @@ php artisan key:generate
 php artisan migrate --seed
 ```
 
-Login admin default (GANTI setelah instalasi):
+Login admin default — memakai **username saja, tanpa email** (GANTI password setelah instalasi):
 
-| Email | Password |
+| Username | Password |
 |---|---|
-| `admin@smkn5.sch.id` | `admin12345` |
+| `admin` | `admin12345` |
 
 Data awal dari seeder: 8 jurusan, 50 kelas, 1 QR statis "Lobi Utama".
 
@@ -63,5 +63,5 @@ Data awal dari seeder: 8 jurusan, 50 kelas, 1 QR statis "Lobi Utama".
 php artisan test
 ```
 
-24 tes (76 assertion) mencakup form, scan QR valid/tidak dikenal/nonaktif,
+31 tes (96 assertion) mencakup form, scan QR valid/tidak dikenal/nonaktif,
 konfirmasi lobi, login admin, rekap, generate QR, export CSV, dan kelola kelas & jurusan.

@@ -9,9 +9,14 @@ class AuthController extends Controller {
         return view('admin.login');
     }
     public function login(Request $request) {
-        $cred = $request->validate(['email'=>['required','email'],'password'=>['required','string']]);
+        // Login admin hanya memakai username + password (tanpa email).
+        $cred = $request->validate([
+            'username' => ['required', 'string', 'max:50'],
+            'password' => ['required', 'string'],
+        ]);
+        $cred['username'] = strtolower(trim($cred['username']));
         if (!Auth::attempt($cred, $request->boolean('remember'))) {
-            return back()->withErrors(['email'=>'Email atau password salah.'])->onlyInput('email');
+            return back()->withErrors(['username' => 'Username atau password salah.'])->onlyInput('username');
         }
         $request->session()->regenerate();
         return redirect()->intended(route('admin.rekap'));

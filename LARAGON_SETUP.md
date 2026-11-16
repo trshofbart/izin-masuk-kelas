@@ -82,3 +82,21 @@ atau buka aplikasi lewat alamat yang mendukung HTTPS.
 2. Siswa menuju lobi, menekan **Scan QR Izin Masuk Kelas** di halaman
    statusnya dan men-scan QR cetak — status berubah menjadi **Diizinkan**.
 3. Guru piket / admin membuka **Rekap Harian** untuk memeriksa daftar hari itu.
+
+## 6. Akses lewat Cloudflare Tunnel
+
+Cloudflare Tunnel menyajikan aplikasi lewat **HTTPS**, sementara koneksi dari
+`cloudflared` ke Laragon adalah HTTP biasa. Aplikasi ini sudah diatur untuk
+memercayai header proxy (`trustProxies` di `bootstrap/app.php`), jadi URL
+CSS/JS otomatis dibuat dengan `https://` mengikuti domain tunnel — CSS tetap
+terload dan tidak diblokir browser sebagai *mixed content*.
+
+Yang perlu dilakukan hanya:
+
+```bash
+cloudflared tunnel --url http://localhost:8002
+```
+
+Lalu buka alamat `https://....trycloudflare.com` yang diberikan. Tidak perlu
+mengubah `APP_URL` setiap kali domain tunnel berganti. Bila CSS tetap tidak
+terload, jalankan `php artisan config:clear` lalu muat ulang dengan Ctrl+F5.

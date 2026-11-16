@@ -13,6 +13,12 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware): void {
         $middleware->redirectGuestsTo(fn () => route('admin.login'));
+        // Percayai header X-Forwarded-* dari proxy/tunnel (Cloudflare Tunnel,
+        // reverse proxy, dll). Tanpa ini Laravel mengira request datang lewat
+        // HTTP biasa, sehingga URL CSS/JS dibuat dengan http:// — dan browser
+        // memblokirnya sebagai mixed content saat halaman dibuka lewat
+        // https:// (domain tunnel), akibatnya CSS tidak terload.
+        $middleware->trustProxies(at: '*');
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         $exceptions->shouldRenderJsonWhen(

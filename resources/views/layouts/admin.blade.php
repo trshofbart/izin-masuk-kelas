@@ -31,7 +31,8 @@
                 <a href="{{ route('admin.jurusan.index') }}" class="px-3 py-2 rounded-lg bg-slate-700 hover:bg-slate-600">Jurusan</a>
                 <a href="{{ route('izin.create') }}" class="px-3 py-2 rounded-lg bg-slate-700 hover:bg-slate-600">Lihat Form Siswa</a>
             </nav>
-            <form method="POST" action="{{ route('admin.logout') }}" class="ml-auto">@csrf
+            <a href="{{ route('admin.password.edit') }}" class="ml-auto text-sm bg-slate-700 hover:bg-slate-600 px-3 py-2 rounded-lg">Ubah Password</a>
+            <form method="POST" action="{{ route('admin.logout') }}">@csrf
                 <button class="text-sm bg-red-600 hover:bg-red-700 px-3 py-2 rounded-lg">Keluar ({{ auth()->user()->name }})</button>
             </form>
         </div>

@@ -48,8 +48,7 @@ Perintah ini membuat semua tabel dan mengisi data awal: 8 jurusan, 50 kelas,
 
 - **Form siswa:** alamat root aplikasi (lihat cara akses)
 - **Login admin:** `/admin/login` — default username `admin` / `admin12345`
-  (**wajib ganti password** setelah instalasi; tidak ada menu ganti password,
-  ganti lewat `php artisan tinker`: `User::first()->update(['password' => bcrypt('baru')])`)
+  (**wajib ganti password** setelah instalasi lewat menu **Ubah Password** di panel admin)
 - **Cetak QR lobi:** login admin → menu **QR Lobi** → **Cetak QR** → tempel hasil cetak di lobi.
 
 ### Cara A — VirtualHost port 8002 (disarankan)

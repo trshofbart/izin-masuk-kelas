@@ -63,5 +63,5 @@ Data awal dari seeder: 8 jurusan, 50 kelas, 1 QR statis "Lobi Utama".
 php artisan test
 ```
 
-31 tes (96 assertion) mencakup form, scan QR valid/tidak dikenal/nonaktif,
+37 tes (113 assertion) mencakup form, scan QR valid/tidak dikenal/nonaktif,
 konfirmasi lobi, login admin, rekap, generate QR, export CSV, dan kelola kelas & jurusan.

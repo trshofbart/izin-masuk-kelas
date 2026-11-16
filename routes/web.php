@@ -2,6 +2,7 @@
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\JurusanController;
 use App\Http\Controllers\Admin\KelasController;
+use App\Http\Controllers\Admin\PasswordController;
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\QrMasukController;
 use App\Http\Controllers\IzinMasukController;
@@ -28,6 +29,8 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     Route::get('/rekap', [AdminController::class, 'rekap'])->name('admin.rekap.alt');
     Route::get('/rekap/export', [AdminController::class, 'exportCsv'])->name('admin.rekap.export');
     Route::post('/izin/{izin}/diizinkan', [AdminController::class, 'tandaiDiizinkan'])->name('admin.izin.diizinkan');
+    Route::get('/password', [PasswordController::class, 'edit'])->name('admin.password.edit');
+    Route::post('/password', [PasswordController::class, 'update'])->name('admin.password.update');
     Route::get('/kelas', [KelasController::class, 'index'])->name('admin.kelas.index');
     Route::post('/kelas', [KelasController::class, 'store'])->name('admin.kelas.store');
     Route::get('/kelas/{kelas}/edit', [KelasController::class, 'edit'])->name('admin.kelas.edit');

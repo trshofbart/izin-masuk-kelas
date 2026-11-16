@@ -53,6 +53,8 @@ Data awal dari seeder: 8 jurusan, 50 kelas, 1 QR statis "Lobi Utama".
 | `POST /izin/{kode}/scan` | Konfirmasi scan QR dari halaman siswa |
 | `GET /lobi/{kode}` | Halaman tujuan QR cetak di lobi |
 | `GET /admin` | Rekap harian (login) |
+| `GET /admin/kelas` | Kelola kelas: tambah / edit / hapus (login) |
+| `GET /admin/jurusan` | Kelola jurusan: tambah / edit / hapus (login) |
 | `GET /admin/qr` | Kelola & generate QR statis lobi (login) |
 
 ## Tes
@@ -61,5 +63,5 @@ Data awal dari seeder: 8 jurusan, 50 kelas, 1 QR statis "Lobi Utama".
 php artisan test
 ```
 
-16 tes (46 assertion) mencakup form, scan QR valid/tidak dikenal/nonaktif,
-konfirmasi lobi, login admin, rekap, generate QR, dan export CSV.
+24 tes (76 assertion) mencakup form, scan QR valid/tidak dikenal/nonaktif,
+konfirmasi lobi, login admin, rekap, generate QR, export CSV, dan kelola kelas & jurusan.

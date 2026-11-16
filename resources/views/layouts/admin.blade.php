@@ -27,6 +27,8 @@
             <nav class="ml-4 flex gap-2 text-sm">
                 <a href="{{ route('admin.rekap') }}" class="px-3 py-2 rounded-lg bg-slate-700 hover:bg-slate-600">Rekap Harian</a>
                 <a href="{{ route('admin.qr.index') }}" class="px-3 py-2 rounded-lg bg-slate-700 hover:bg-slate-600">QR Lobi</a>
+                <a href="{{ route('admin.kelas.index') }}" class="px-3 py-2 rounded-lg bg-slate-700 hover:bg-slate-600">Kelas</a>
+                <a href="{{ route('admin.jurusan.index') }}" class="px-3 py-2 rounded-lg bg-slate-700 hover:bg-slate-600">Jurusan</a>
                 <a href="{{ route('izin.create') }}" class="px-3 py-2 rounded-lg bg-slate-700 hover:bg-slate-600">Lihat Form Siswa</a>
             </nav>
             <form method="POST" action="{{ route('admin.logout') }}" class="ml-auto">@csrf
